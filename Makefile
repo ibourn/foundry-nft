@@ -18,7 +18,7 @@ clean  :; forge clean
 # Remove modules
 remove :; rm -rf .gitmodules && rm -rf .git/modules/* && rm -rf lib && touch .gitmodules && git add . && git commit -m "modules"
 
-install :; forge install Cyfrin/foundry-devops@0.0.11 --no-commit --no-commit && forge install foundry-rs/forge-std@v1.5.3 --no-commit && forge install openzeppelin/openzeppelin-contracts@v4.8.3 --no-commit
+install :; forge install Cyfrin/foundry-devops@0.1.0 --no-commit && forge install foundry-rs/forge-std@v1.5.3 --no-commit && forge install openzeppelin/openzeppelin-contracts@v4.8.3 --no-commit
 
 # Update Dependencies
 update:; forge update
@@ -38,6 +38,21 @@ NETWORK_ARGS := --rpc-url http://localhost:8545 --private-key $(DEFAULT_ANVIL_KE
 ifeq ($(findstring --network sepolia,$(ARGS)),--network sepolia)
 	NETWORK_ARGS := --rpc-url $(SEPOLIA_RPC_URL) --private-key $(PRIVATE_KEY) --broadcast --verify --etherscan-api-key $(ETHERSCAN_API_KEY) -vvvv
 endif
+
+deploy:
+	@forge script script/DeployBaseNFT.s.sol:DeployBaseNFT $(NETWORK_ARGS)
+
+mint:
+	@forge script script/Interactions.s.sol:MintBaseNFT ${NETWORK_ARGS}
+
+deployMood:
+	@forge script script/DeployMoodNFT.s.sol:DeployMoodNFT $(NETWORK_ARGS)
+
+mintMoodNFT:
+	@forge script script/Interactions.s.sol:MintMoodNFT $(NETWORK_ARGS)
+
+flipMoodNFT:
+	@forge script script/Interactions.s.sol:FlipMoodNFT $(NETWORK_ARGS)
 
 # deploy:
 # 	@forge script script/DeployOurToken.s.sol:DeployOurToken $(NETWORK_ARGS)
