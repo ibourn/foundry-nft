@@ -15,16 +15,16 @@ contract DeployMoodNFTTest is Test {
         deployer = new DeployMoodNFT();
 
         // to get the token URIs in order to test the flipMood function
-        // moodNFT = deployer.run();
+        moodNFT = deployer.run();
 
-        // vm.startPrank(USER);
-        // moodNFT.mintNft();
-        // string memory happyTokenURI = moodNFT.tokenURI(0);
-        // moodNFT.flipMood(0);
-        // string memory sadTokenURI = moodNFT.tokenURI(0);
-        // vm.stopPrank();
-        // console.log("DeployMoodNFTTest / setUP : happyTokenURI", happyTokenURI);
-        // console.log("DeployMoodNFTTest / setUP : sadTokenURI", sadTokenURI);
+        vm.startPrank(USER);
+        moodNFT.mintNft();
+        string memory happyTokenURI = moodNFT.tokenURI(0);
+        moodNFT.flipMood(0);
+        string memory sadTokenURI = moodNFT.tokenURI(0);
+        vm.stopPrank();
+        console.log("DeployMoodNFTTest / setUP : happyTokenURI", happyTokenURI);
+        console.log("DeployMoodNFTTest / setUP : sadTokenURI", sadTokenURI);
     }
 
     function test_ConvertHappySvgToURI() public view {
