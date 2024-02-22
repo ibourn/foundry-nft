@@ -1,3 +1,8 @@
+# address of contatract deployed to sepolia :
+
+baseNFT : 0xEC03A986f49021d36Ec9256787588e3B1f46cae3
+moodNFT : 0x499a972283F3B6D6C6122bbaba7b2C81286C060e
+
 # enconding svg
 
 ### ==> HAPPY

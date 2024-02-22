@@ -1,0 +1,63 @@
+No files changed, compilation skipped
+
+Running 1 test for test/unit/MoodNFTTest.t.sol:MoodNFTTest
+[32m[PASS][0m test_ViewTokenURI() (gas: 210364)
+Test result: [32mok[0m. [32m1[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 1.90ms
+
+Running 4 tests for test/integrations/BaseNFTTest.t.sol:BaseNFTTest
+[32m[PASS][0m test_ShoulMintNft() (gas: 171160)
+[32m[PASS][0m test_ShouldHaveABalance_AfterMinting() (gas: 171158)
+[32m[PASS][0m test_ShouldHaveNameDogie() (gas: 9641)
+[32m[PASS][0m test_ShouldSetCorrectTokenUri_AfterMinting() (gas: 173953)
+Test result: [32mok[0m. [32m4[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 2.00ms
+
+Running 2 tests for test/integrations/MoodNFTIntegrationTest.t.sol:MoodNFTIntegrationTest
+[32m[PASS][0m test_ShouldFlipTokenToSad() (gas: 496024)
+[32m[PASS][0m test_ViewTokenURI_Integration() (gas: 210408)
+Test result: [32mok[0m. [32m2[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 4.50ms
+
+Running 2 tests for test/unit/DeployMoodNFTTest.t.sol:DeployMoodNFTTest
+[32m[PASS][0m test_ConvertHappySvgToURI() (gas: 44732)
+[32m[PASS][0m test_ConvertSadSvgToURI() (gas: 109485)
+Test result: [32mok[0m. [32m2[0m passed; [31m0[0m failed; [33m0[0m skipped; finished in 4.77ms
+| script/DeployBaseNFT.s.sol:DeployBaseNFT contract |                 |        |        |        |         |
+|---------------------------------------------------|-----------------|--------|--------|--------|---------|
+| Deployment Cost                                   | Deployment Size |        |        |        |         |
+| 1042185                                           | 5144            |        |        |        |         |
+| Function Name                                     | min             | avg    | median | max    | # calls |
+| run                                               | 904825          | 904825 | 904825 | 904825 | 4       |
+
+
+| script/DeployMoodNFT.s.sol:DeployMoodNFT contract |                 |         |         |         |         |
+|---------------------------------------------------|-----------------|---------|---------|---------|---------|
+| Deployment Cost                                   | Deployment Size |         |         |         |         |
+| 1637018                                           | 8115            |         |         |         |         |
+| Function Name                                     | min             | avg     | median  | max     | # calls |
+| run                                               | 2616759         | 2616759 | 2616759 | 2616759 | 4       |
+| svgToImageURI                                     | 33443           | 61824   | 61824   | 90205   | 2       |
+
+
+| src/BaseNFT.sol:BaseNFT contract |                 |        |        |        |         |
+|----------------------------------|-----------------|--------|--------|--------|---------|
+| Deployment Cost                  | Deployment Size |        |        |        |         |
+| 868406                           | 4608            |        |        |        |         |
+| Function Name                    | min             | avg    | median | max    | # calls |
+| balanceOf                        | 612             | 612    | 612    | 612    | 2       |
+| mintNft                          | 159258          | 159258 | 159258 | 159258 | 3       |
+| name                             | 3263            | 3263   | 3263   | 3263   | 1       |
+| tokenURI                         | 1947            | 1947   | 1947   | 1947   | 1       |
+
+
+| src/MoodNFT.sol:MoodNFT contract |                 |        |        |        |         |
+|----------------------------------|-----------------|--------|--------|--------|---------|
+| Deployment Cost                  | Deployment Size |        |        |        |         |
+| 2452407                          | 7934            |        |        |        |         |
+| Function Name                    | min             | avg    | median | max    | # calls |
+| flipMood                         | 1163            | 1163   | 1163   | 1163   | 3       |
+| mintNft                          | 89860           | 91060  | 91860  | 91860  | 5       |
+| tokenURI                         | 62201           | 123107 | 121107 | 234014 | 8       |
+
+
+
+ 
+Ran 4 test suites: [32m9[0m tests passed, [31m0[0m failed, [33m0[0m skipped (9 total tests)
